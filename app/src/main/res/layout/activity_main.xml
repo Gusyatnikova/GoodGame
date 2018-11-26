@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:orientation="vertical">
 
     <TextView
@@ -26,27 +27,30 @@
         android:textSize="24sp"
         app:fontFamily="serif"></TextView>
 
-    <Button
+    <ImageButton
         android:id="@+id/button"
-        android:layout_width="148dp"
-        android:layout_height="120dp"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/button2"
         android:layout_marginEnd="30dp"
         android:onClick="toTeacher"
+        android:src="@drawable/student"
         android:text="Обучать"
         android:textSize="24sp"
         android:textStyle="italic" />
 
-    <Button
+    <ImageButton
         android:id="@+id/button2"
-        android:layout_width="149dp"
-        android:layout_height="120dp"
-        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="202dp"
-        android:layout_marginStart="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
         android:onClick="toStudent"
+        android:src="@drawable/teacher"
         android:text="Учиться"
         android:textSize="24sp"
         android:textStyle="italic" />
