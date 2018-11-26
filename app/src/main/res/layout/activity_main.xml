@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="63dp"
+        android:text="Здравствуйте!"
+        android:textSize="26sp"
+        app:fontFamily="serif"></TextView>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="128dp"
+        android:text="Чем хотите заняться?"
+        android:textSize="24sp"
+        app:fontFamily="serif"></TextView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="148dp"
+        android:layout_height="120dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/button2"
+        android:layout_marginEnd="30dp"
+        android:onClick="toTeacher"
+        android:text="Обучать"
+        android:textSize="24sp"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="149dp"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="202dp"
+        android:layout_marginStart="30dp"
+        android:onClick="toStudent"
+        android:text="Учиться"
+        android:textSize="24sp"
+        android:textStyle="italic" />
+
+</RelativeLayout>
