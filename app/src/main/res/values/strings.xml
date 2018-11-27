@@ -3,4 +3,16 @@
     <string name="main_menu">Main Menu</string>
     <string name="Обучать">Обучать</string>
     <string name="Учиться" />
+    <string name="greeting">Здравствуйте!</string>
+    <string name="what_do_you_want_to_do">Чем хотите заняться?</string>
+    <string name="teach">Обучать</string>
+    <string name="study">Учиться</string>
+    <string name="choose_level">Выбрать уровень</string>
+    <string name="my_achievements">Мои достижения</string>
+    <string name="exit">Выход из игры</string>
+    <string name="welcome">Добро пожаловать в GoodGame!</string>
+    <string name="Students_achievements">Достижения учеников</string>
+    <string name="Registrate">Зарегистрировать ученика</string>
+    <string name="Delete">Удалить ученика</string>
+    <string name="WordList">Просмотреть список слов</string>
 </resources>

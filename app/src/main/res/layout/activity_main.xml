@@ -12,9 +12,9 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="63dp"
-        android:text="Здравствуйте!"
+        android:text="@string/greeting"
         android:textSize="26sp"
-        app:fontFamily="serif"></TextView>
+        app:fontFamily="serif" />
 
     <TextView
         android:id="@+id/textView"
@@ -23,9 +23,9 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="128dp"
-        android:text="Чем хотите заняться?"
+        android:text="@string/what_do_you_want_to_do"
         android:textSize="24sp"
-        app:fontFamily="serif"></TextView>
+        app:fontFamily="serif" />
 
     <ImageButton
         android:id="@+id/button"
@@ -38,7 +38,7 @@
         android:layout_marginRight="30dp"
         android:onClick="toTeacher"
         android:src="@drawable/teacher"
-        android:text="Обучать"
+        android:text="@string/teach"
         android:textSize="24sp"
         android:textStyle="italic" />
 
@@ -51,7 +51,7 @@
         android:layout_centerVertical="true"
         android:onClick="toStudent"
         android:src="@drawable/student"
-        android:text="Учиться"
+        android:text="@string/study"
         android:textSize="24sp"
         android:textStyle="italic" />
 
