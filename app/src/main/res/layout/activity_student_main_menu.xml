@@ -18,11 +18,11 @@
             android:textSize="24sp"
             android:gravity="center_horizontal"/>
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="match_parent"
-            android:layout_height="101dp"
-            android:text="@string/choose_level" />
+    <Button
+        android:id="@+id/levels"
+        android:layout_width="match_parent"
+        android:layout_height="101dp"
+        android:text="@string/choose_level" />
 
         <Button
             android:id="@+id/button4"

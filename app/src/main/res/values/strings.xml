@@ -15,4 +15,8 @@
     <string name="Registrate">Зарегистрировать ученика</string>
     <string name="Delete">Удалить ученика</string>
     <string name="WordList">Просмотреть список слов</string>
+    <string name="choose_level_to_play">Choose level to play</string>
+    <string name="level_1">Level 1</string>
+    <string name="level_2">Level 2</string>
+    <string name="level_3">Level 3</string>
 </resources>
