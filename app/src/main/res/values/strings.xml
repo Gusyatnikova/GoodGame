@@ -21,4 +21,8 @@
     <string name="level_3">Level 3</string>
     <string name="enter_login">Введите логин</string>
     <string name="enter_pswd">Введите пароль</string>
+    <string name="game_1">Выбери правильное слово</string>
+    <string name="game_2">Переведи слово</string>
+    <string name="game_3">Сопоставь слова</string>
+    <string name="select_game">Выбери игру! </string>
 </resources>

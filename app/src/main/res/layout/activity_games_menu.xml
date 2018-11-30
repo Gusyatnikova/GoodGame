@@ -3,14 +3,14 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical">
+
     <TextView
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:textSize="24sp"
         android:gravity="center_horizontal"
-        android:text="@string/choose_level_to_play"
-        />
+        android:text="@string/select_game"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/level1"
@@ -18,7 +18,7 @@
         android:layout_height="100dp"
         android:layout_marginTop="5dp"
         android:onClick="pressLevel1"
-        android:text="@string/level_1" />
+        android:text="@string/game_1" />
 
     <Button
         android:id="@+id/level2"
@@ -26,7 +26,7 @@
         android:layout_height="100dp"
         android:layout_marginTop="5dp"
         android:onClick="pressLevel2"
-        android:text="@string/level_2" />
+        android:text="@string/game_2" />
 
     <Button
         android:id="@+id/level3"
@@ -34,5 +34,5 @@
         android:layout_height="100dp"
         android:layout_marginTop="5dp"
         android:onClick="pressLevel3"
-        android:text="@string/level_3" />
+        android:text="@string/game_3" />
 </LinearLayout>
