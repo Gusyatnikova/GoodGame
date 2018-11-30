@@ -15,8 +15,6 @@ public class RegistrationMenu extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
     }
 
-    // Called when the user taps the Send button */
-    //TODO: public void enter(String login, String pswd)
     public void enter(View view) {
         Intent intent = new Intent(this, SelectRoleMenu.class);
         startActivity(intent);
