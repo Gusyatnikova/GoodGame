@@ -36,7 +36,6 @@
             android:parentActivityName=".RegistrationMenu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <!-- The meta-data tag is required if you support API level 15 and lower -->
@@ -54,7 +53,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".StudentMainMenu" />>
         </activity>
-        <activity android:name=".GamesMenu" />
+
+        <activity
+            android:name=".GamesMenu"
+            android:parentActivityName=".LevelsMenu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".GamesMenu" />>
+        </activity>
+
     </application>
 
 </manifest>

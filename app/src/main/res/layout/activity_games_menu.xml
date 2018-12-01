@@ -17,7 +17,6 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginTop="5dp"
-        android:onClick="pressLevel1"
         android:text="@string/game_1" />
 
     <Button
@@ -25,7 +24,6 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginTop="5dp"
-        android:onClick="pressLevel2"
         android:text="@string/game_2" />
 
     <Button
@@ -33,6 +31,5 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginTop="5dp"
-        android:onClick="pressLevel3"
         android:text="@string/game_3" />
 </LinearLayout>
