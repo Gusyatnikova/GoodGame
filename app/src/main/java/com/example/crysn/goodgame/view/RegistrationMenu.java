@@ -1,8 +1,6 @@
 package com.example.crysn.goodgame.view;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,11 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.crysn.goodgame.R;
-import com.example.crysn.goodgame.controller.AuthorizationContract;
-import com.example.crysn.goodgame.controller.AuthorizationDataBaseHelper;
 import com.example.crysn.goodgame.controller.RegistrationController;
-
-import com.example.crysn.goodgame.controller.AuthorizationContract;
 
 
 public class RegistrationMenu extends AppCompatActivity {

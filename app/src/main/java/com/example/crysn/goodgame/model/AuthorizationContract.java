@@ -1,4 +1,4 @@
-package com.example.crysn.goodgame.controller;
+package com.example.crysn.goodgame.model;
 
 import android.provider.BaseColumns;
 

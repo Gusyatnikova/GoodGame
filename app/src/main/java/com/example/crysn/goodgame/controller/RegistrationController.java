@@ -4,10 +4,8 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.view.View;
 
-import static android.icu.text.MessagePattern.ArgType.SELECT;
-import com.example.crysn.goodgame.controller.AuthorizationContract.AuthorizationEntry;
+import com.example.crysn.goodgame.model.AuthorizationContract.AuthorizationEntry;
 
 public class RegistrationController {
 

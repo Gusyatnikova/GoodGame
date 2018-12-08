@@ -12,8 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.crysn.goodgame.R;
-import com.example.crysn.goodgame.controller.Question;
-import com.example.crysn.goodgame.controller.QuestionsManager;
+import com.example.crysn.goodgame.controller.ChooseCWcontroller;
+import com.example.crysn.goodgame.model.Question;
 
 import java.util.ArrayList;
 
@@ -42,8 +42,8 @@ public class ChooseCorrectWord extends AppCompatActivity {
     }
     //<editor-fold desc="Configuration">
     private void setupQuestions(){
-        QuestionsManager questionsManager = new QuestionsManager();
-        questions = questionsManager.questions();
+        ChooseCWcontroller controller = new ChooseCWcontroller();
+        questions = controller.questions();
     }
     private void configureView(){
         progressbar = findViewById(R.id.progress_bar);

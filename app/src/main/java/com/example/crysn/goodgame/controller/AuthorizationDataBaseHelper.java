@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.crysn.goodgame.controller.AuthorizationContract.AuthorizationEntry;
+import com.example.crysn.goodgame.model.AuthorizationContract.AuthorizationEntry;
 
 public class AuthorizationDataBaseHelper extends SQLiteOpenHelper {
         // If you change the database schema, you must increment the database version.
