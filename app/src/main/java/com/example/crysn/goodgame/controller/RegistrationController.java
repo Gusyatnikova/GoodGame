@@ -44,13 +44,17 @@ public class RegistrationController {
                 null,                  // Don't group the rows
                 null,                  // Don't filter by row groups
                 AuthorizationEntry.COLUMN_NAME + " DESC");  // порядок сортировки
-        while (cursor.moveToNext()) {
+        try {
+            while (cursor.moveToNext()) {
             String currentFirstName = cursor.getString(cursor.getColumnIndex(AuthorizationEntry.COLUMN_NAME));
             String currentLastName = cursor.getString(cursor.getColumnIndex(AuthorizationEntry.COLUMN_LAST_NAME));
             String currentRegistator = cursor.getString(cursor.getColumnIndex(AuthorizationEntry.REGISTRATOR));
             if(currentFirstName.isEmpty() || currentLastName.isEmpty())
                 return false;
             else return true;
+            }
+        }finally {
+            cursor.close();
         }
         return false;
     }

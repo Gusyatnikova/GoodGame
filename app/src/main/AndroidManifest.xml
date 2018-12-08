@@ -9,9 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.SelectRoleMenu">
-
-        </activity>
+        <activity android:name=".view.SelectRoleMenu"></activity>
         <activity
             android:name=".view.StudentMainMenu"
             android:parentActivityName=".view.SelectRoleMenu">
@@ -30,12 +28,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.SelectRoleMenu" />
         </activity>
-
         <activity
             android:name=".view.RegistrationMenu"
             android:parentActivityName=".view.RegistrationMenu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <!-- The meta-data tag is required if you support API level 15 and lower -->
@@ -43,7 +41,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.RegistrationMenu" />
         </activity>
-
         <activity
             android:name=".view.LevelsMenu"
             android:parentActivityName=".view.StudentMainMenu">
@@ -51,17 +48,21 @@
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.StudentMainMenu" />>
+                android:value=".view.StudentMainMenu" />
+            >
         </activity>
-
         <activity
             android:name=".view.GamesMenu"
             android:parentActivityName=".view.LevelsMenu">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.GamesMenu" />>
+                android:value=".view.GamesMenu" />
+            >
         </activity>
-
+        <activity android:name=".view.ChooseCorrectWord"
+            android:parentActivityName=".view.GamesMenu"><meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".view.GamesMenu"/></activity>
     </application>
 
 </manifest>
