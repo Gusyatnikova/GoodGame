@@ -1,10 +1,13 @@
-package com.example.crysn.goodgame;
+package com.example.crysn.goodgame.view;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.crysn.goodgame.R;
+import com.example.crysn.goodgame.view.LevelsMenu;
 
 public class StudentMainMenu extends AppCompatActivity {
     Button toLevels;

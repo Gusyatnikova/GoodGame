@@ -1,9 +1,11 @@
-package com.example.crysn.goodgame;
+package com.example.crysn.goodgame.view;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.crysn.goodgame.R;
 
 
 public class SelectRoleMenu extends AppCompatActivity {

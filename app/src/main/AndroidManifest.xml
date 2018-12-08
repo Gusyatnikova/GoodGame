@@ -9,31 +9,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SelectRoleMenu">
+        <activity android:name=".view.SelectRoleMenu">
 
         </activity>
         <activity
-            android:name=".StudentMainMenu"
-            android:parentActivityName=".SelectRoleMenu">
+            android:name=".view.StudentMainMenu"
+            android:parentActivityName=".view.SelectRoleMenu">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".SelectRoleMenu" />
+                android:value=".view.SelectRoleMenu" />
         </activity>
         <activity
-            android:name=".TeacherMainMenu"
-            android:parentActivityName=".SelectRoleMenu">
+            android:name=".view.TeacherMainMenu"
+            android:parentActivityName=".view.SelectRoleMenu">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".SelectRoleMenu" />
+                android:value=".view.SelectRoleMenu" />
         </activity>
 
         <activity
-            android:name=".RegistrationMenu"
-            android:parentActivityName=".RegistrationMenu">
+            android:name=".view.RegistrationMenu"
+            android:parentActivityName=".view.RegistrationMenu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -41,25 +41,25 @@
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".RegistrationMenu" />
+                android:value=".view.RegistrationMenu" />
         </activity>
 
         <activity
-            android:name=".LevelsMenu"
-            android:parentActivityName=".StudentMainMenu">
+            android:name=".view.LevelsMenu"
+            android:parentActivityName=".view.StudentMainMenu">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".StudentMainMenu" />>
+                android:value=".view.StudentMainMenu" />>
         </activity>
 
         <activity
-            android:name=".GamesMenu"
-            android:parentActivityName=".LevelsMenu">
+            android:name=".view.GamesMenu"
+            android:parentActivityName=".view.LevelsMenu">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".GamesMenu" />>
+                android:value=".view.GamesMenu" />>
         </activity>
 
     </application>

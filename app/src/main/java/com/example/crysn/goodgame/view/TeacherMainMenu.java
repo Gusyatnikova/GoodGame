@@ -1,7 +1,9 @@
-package com.example.crysn.goodgame;
+package com.example.crysn.goodgame.view;
 
         import android.os.Bundle;
         import android.support.v7.app.AppCompatActivity;
+
+        import com.example.crysn.goodgame.R;
 
 public class TeacherMainMenu extends AppCompatActivity {
     @Override
