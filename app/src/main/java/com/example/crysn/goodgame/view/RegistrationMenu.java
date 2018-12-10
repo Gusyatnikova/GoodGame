@@ -29,6 +29,7 @@ public class RegistrationMenu extends AppCompatActivity {
     public void enter(View view) {
         String Login = login.getText().toString();
         String Pswd = pswd.getText().toString();
+
         boolean res = controller.validate(Login, Pswd);
         if(!res) {
             Toast.makeText(view.getContext(), "Wrong login or password", Toast.LENGTH_SHORT).show();
