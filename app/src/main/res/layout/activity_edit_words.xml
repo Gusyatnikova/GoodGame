@@ -20,7 +20,7 @@
         android:layout_alignParentBottom="true"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/add_word" />
+        android:hint="@string/add_word"/>
 
     <ListView
         android:id="@+id/listview"
