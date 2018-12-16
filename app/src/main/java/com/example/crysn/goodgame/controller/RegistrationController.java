@@ -6,19 +6,21 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.crysn.goodgame.model.AuthorizationContract.AuthorizationEntry;
+import com.example.crysn.goodgame.model.User;
 
 public class RegistrationController {
 
     private AuthorizationDataBaseHelper dataBaseHelper;
+    public static User user;
 
-    public RegistrationController(Context context){
+    public RegistrationController(Context context) {
         dataBaseHelper = new AuthorizationDataBaseHelper(context);
     }
 
-    public boolean validate(String login, String pswd){
-        if(login.isEmpty() || pswd.isEmpty())
+    public boolean validate(String login, String pswd) {
+        if (login.isEmpty() || pswd.isEmpty())
             return false;
-        else{
+        else {
             boolean isIn = doSelect(login, pswd);
             if (!isIn)
                 return false;
@@ -26,7 +28,7 @@ public class RegistrationController {
         }
     }
 
-    private boolean doSelect(String login, String pswd){
+    private boolean doSelect(String login, String pswd) {
         SQLiteDatabase db = dataBaseHelper.getReadableDatabase();
         String[] projection = {
                 AuthorizationEntry.COLUMN_NAME,
@@ -44,20 +46,23 @@ public class RegistrationController {
                 AuthorizationEntry.COLUMN_NAME + " DESC");  // порядок сортировки
         try {
             while (cursor.moveToNext()) {
-            String currentFirstName = cursor.getString(cursor.getColumnIndex(AuthorizationEntry.COLUMN_NAME));
-            String currentLastName = cursor.getString(cursor.getColumnIndex(AuthorizationEntry.COLUMN_LAST_NAME));
-            String currentRegistator = cursor.getString(cursor.getColumnIndex(AuthorizationEntry.REGISTRATOR));
-            if(currentFirstName.isEmpty() || currentLastName.isEmpty())
-                return false;
-            else return true;
+                String currentFirstName = cursor.getString(cursor.getColumnIndex(AuthorizationEntry.COLUMN_NAME));
+                String currentLastName = cursor.getString(cursor.getColumnIndex(AuthorizationEntry.COLUMN_LAST_NAME));
+                String currentRegistator = cursor.getString(cursor.getColumnIndex(AuthorizationEntry.REGISTRATOR));
+                if (currentFirstName.isEmpty() || currentLastName.isEmpty())
+                    return false;
+                else {
+                    user = new User(login, pswd, currentFirstName, currentLastName, currentRegistator);
+                    return true;
+                }
             }
-        }finally {
+        } finally {
             cursor.close();
         }
         return false;
     }
 
-    private boolean doInsert(String firstname, String lastname, String registrator, String login, String password){
+    private boolean doInsert(String firstname, String lastname, String registrator, String login, String password) {
         SQLiteDatabase db = dataBaseHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();

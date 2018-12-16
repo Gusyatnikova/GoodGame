@@ -15,7 +15,7 @@ public class TeacherMainMenu extends AppCompatActivity {
     }
 
     public void showWords(View view) {
-        Intent intent = new Intent(this, EditWordsMenuActivity.class);
+        Intent intent = new Intent(this, EditWordsMenu.class);
         startActivity(intent);
     }
 }

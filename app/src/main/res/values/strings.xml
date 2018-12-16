@@ -26,7 +26,8 @@
     <string name="game_3">Сопоставь слова</string>
     <string name="select_game">Выбери игру! </string>
     <string name="word_translate">Слово-перевод </string>
-    <string name="add_word">Добавить пару </string>
+    <string name="add_english_word">English </string>
+    <string name="add_russian_word">Русский </string>
     <string name="next">Следующий вопрос</string>
     <string name="hint">Перевод</string>
 

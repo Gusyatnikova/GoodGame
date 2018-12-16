@@ -67,7 +67,7 @@
                 android:value=".view.GamesMenu" />
         </activity>
         <activity
-            android:name=".view.EditWordsMenuActivity"
+            android:name=".view.EditWordsMenu"
             android:parentActivityName=".view.TeacherMainMenu">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

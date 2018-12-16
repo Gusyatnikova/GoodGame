@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
@@ -15,12 +16,24 @@
 
     <EditText
         android:id="@+id/editText3"
-        android:layout_width="269dp"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/button7"
+        android:ems="10"
+        android:hint="@string/add_russian_word"
+        android:inputType="textPersonName"
+        tools:hint="Русский" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="132dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:ems="10"
+        android:hint="@string/add_english_word"
         android:inputType="textPersonName"
-        android:hint="@string/add_word"/>
+        tools:hint="English" />
 
     <ListView
         android:id="@+id/listview"

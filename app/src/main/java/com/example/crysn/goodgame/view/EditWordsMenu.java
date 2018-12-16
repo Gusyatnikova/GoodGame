@@ -12,16 +12,22 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.crysn.goodgame.R;
+import com.example.crysn.goodgame.controller.RegistrationController;
+import com.example.crysn.goodgame.controller.WordListController;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class EditWordsMenuActivity extends AppCompatActivity {
+public class EditWordsMenu extends AppCompatActivity {
+    private WordListController controller;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_words);
+        controller = new WordListController(this.getApplicationContext());
+
 
         final ListView listView = (ListView) findViewById(R.id.listview);
         String[] values = new String[]{
@@ -38,6 +44,8 @@ public class EditWordsMenuActivity extends AppCompatActivity {
         for (int i = 0; i < values.length; i++) {
             list.add(values[i]);
         }
+
+
         final StableArrayAdapter adapter = new StableArrayAdapter(this, android.R.layout.simple_list_item_1, list);
         listView.setAdapter(adapter);
 
