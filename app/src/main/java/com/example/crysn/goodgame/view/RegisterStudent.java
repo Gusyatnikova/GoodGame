@@ -25,12 +25,10 @@ public class RegisterStudent extends AppCompatActivity {
         controller = RegistrationMenu.controller;
         Button bt = findViewById(R.id.button3);
         bt.setOnClickListener(onClickListener);
-        AlertDialog.Builder builder = new AlertDialog.Builder(this.getApplicationContext());
-        AlertDialog alert = builder.create();
     }
-
-
     private View.OnClickListener onClickListener = (v) -> {
+        AlertDialog.Builder builder = new AlertDialog.Builder(RegisterStudent.this);
+        AlertDialog alert = builder.create();
         EditText scFN = findViewById(R.id.firstName);
         EditText scLN = findViewById(R.id.lastName);
         String firstName = scFN.getText().toString();
@@ -45,18 +43,23 @@ public class RegisterStudent extends AppCompatActivity {
 
             String log = login;
             String pswd = sb.toString();
-            if (controller.validate(log, pswd)) {
-                //builder.setTitle("Registration");
-                //builder.setMessage("Такой пользователь уже зарегистрирован!");
-                //alert = builder.create();
+            if(!log.equals("_")) {
+                if (controller.validate(log, "insystem")) {
+                    builder.setTitle("Registration");
+                    builder.setMessage("Такой пользователь уже зарегистрирован!");
+                    alert = builder.create();
+                } else {
+                    builder.setTitle("Registration");
+                    builder.setMessage("Login: " + log + "\nPassword: " + pswd);
+                    controller.doInsert(firstName, lastName, RegistrationController.user.getFirstName(), RegistrationController.user.getLastName(), log, pswd);
+                    alert = builder.create();
+                }
             } else {
-                //builder.setTitle("Registration");
-                //builder.setMessage("Login: " + log + "Password: " + pswd);
-                controller.doInsert(firstName, lastName, RegistrationController.user.getFirstName(), RegistrationController.user.getLastName(), log, pswd);
-                Toast.makeText(v.getContext(), log + "----" + pswd, Toast.LENGTH_SHORT).show();
-                //alert = builder.create();
+                builder.setTitle("Registration");
+                builder.setMessage("Пустое имя пользователя!");
+                alert = builder.create();
             }
-//        alert.show();
+        alert.show();
         }
     };
 }

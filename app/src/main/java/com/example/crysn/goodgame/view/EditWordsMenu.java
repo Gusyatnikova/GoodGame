@@ -118,4 +118,3 @@ public class EditWordsMenu extends AppCompatActivity {
         }
     }
 }
-

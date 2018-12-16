@@ -92,6 +92,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.TeacherMainMenu"/>
         </activity>
+        <activity android:name=".view.DeleteStudent"
+            android:parentActivityName=".view.TeacherMainMenu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.TeacherMainMenu"/>
+        </activity>
     </application>
 
 </manifest>

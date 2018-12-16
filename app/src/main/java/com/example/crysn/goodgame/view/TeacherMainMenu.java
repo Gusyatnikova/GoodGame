@@ -22,4 +22,8 @@ public class TeacherMainMenu extends AppCompatActivity {
         Intent intent = new Intent(this, RegisterStudent.class);
         startActivity(intent);
     }
+    public void deleteStudent(View view) {
+        Intent intent = new Intent(this, DeleteStudent.class);
+        startActivity(intent);
+    }
 }
