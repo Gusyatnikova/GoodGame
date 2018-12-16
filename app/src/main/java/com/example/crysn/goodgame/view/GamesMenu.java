@@ -11,6 +11,7 @@ import com.example.crysn.goodgame.R;
 public class GamesMenu extends AppCompatActivity {
     Button toChooseCW;
     Button toTranslateWord;
+    Button toMatchWords;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,15 @@ public class GamesMenu extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent;
                 intent = new Intent(v.getContext(), TranslateWord.class);
+                startActivity(intent);
+            }
+        });
+        toMatchWords = findViewById(R.id.level3);
+        toMatchWords.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent;
+                intent = new Intent(v.getContext(), MatchWords.class);
                 startActivity(intent);
             }
         });

@@ -73,7 +73,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.TeacherMainMenu" />
         </activity>
-        <activity android:name=".view.TranslateWord"
+        <activity
+            android:name=".view.TranslateWord"
+            android:parentActivityName=".view.GamesMenu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.GamesMenu" />
+        </activity>
+        <activity android:name=".view.MatchWords"
             android:parentActivityName=".view.GamesMenu">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
