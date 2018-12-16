@@ -25,6 +25,17 @@ public class Question {
         this.option3 = option3;
         this.option4 = option4;
     }
+
+    public Question(String question_text, String correct_answer) {
+        this.uuid = UUID.randomUUID();
+        Question_text = question_text;
+        Correct_answer = correct_answer;
+        this.option1 = "";
+        this.option2 = "";
+        this.option3 = "";
+        this.option4 = "";
+    }
+
     //</editor-fold>
 
     //<editor-fold desc="Getters">
