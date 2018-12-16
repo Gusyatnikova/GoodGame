@@ -13,8 +13,9 @@ public final class AuthorizationContract {
 
         public static final String _ID = BaseColumns._ID;
         public static final String COLUMN_NAME = "FirstName";
-        public static final String COLUMN_LAST_NAME = "Last_Name";
-        public static final String REGISTRATOR = "TeachersLastName";
+        public static final String COLUMN_LAST_NAME = "LastName";
+        public static final String REGISTRATOR_FIRST_NAME = "TeachersFirstName";
+        public static final String REGISTRATOR_LAST_NAME = "TeachersLastName";
         public static final String LOGIN = "Login";
         public static final String PASSWORD = "Password";
     }

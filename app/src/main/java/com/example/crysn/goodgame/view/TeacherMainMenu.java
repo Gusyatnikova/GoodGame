@@ -18,4 +18,5 @@ public class TeacherMainMenu extends AppCompatActivity {
         Intent intent = new Intent(this, EditWordsMenu.class);
         startActivity(intent);
     }
+    //
 }

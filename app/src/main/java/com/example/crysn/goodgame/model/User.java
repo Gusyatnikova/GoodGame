@@ -1,25 +1,33 @@
 package com.example.crysn.goodgame.model;
 
+import java.util.ArrayList;
+
 public class User {
     private String login;
     private String pswd;
     private String firstName;
     private String lastName;
-    private String registrator;
+    private String registratorFirstName;
+    private String registratorLastName;
+    private ArrayList<Word> studentWords;
 
     public User() {
         this.login = null;
         this.lastName = null;
         this.firstName = null;
         this.pswd = null;
-        this.registrator = null;
+        this.registratorFirstName = null;
+        this.registratorLastName = null;
+        this.studentWords = null;
     }
-    public User(String login, String pswd, String firstName, String lastName, String registrator) {
+    public User(String login, String pswd, String firstName, String lastName, String registratorFirstName, String registratorLastName) {
         this.login = login;
         this.firstName = firstName;
         this.lastName = lastName;
         this.pswd = pswd;
-        this.registrator = registrator;
+        this.registratorFirstName = registratorFirstName;
+        this.registratorLastName = registratorLastName;
+        this.studentWords = new ArrayList<Word>();
     }
 
     public void setLogin(String login) {
@@ -34,8 +42,9 @@ public class User {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-    public void setRegistrator(String registrator) {
-        this.registrator = registrator;
+    public void setRegistrator(String registratorFirstName, String registratorLastName) {
+        this.registratorFirstName = registratorFirstName;
+        this.registratorLastName = registratorLastName;
     }
     public String getLogin() {
         return this.login;
@@ -52,7 +61,15 @@ public class User {
     public String getLastName() {
         return lastName;
     }
-    public String getRegistrator() {
-        return registrator;
+    public String getRegistratorFirstName() {
+        return registratorFirstName;
+    }
+
+    public String getRegistratorLastName() {
+        return registratorLastName;
+    }
+
+    public void setWords(ArrayList<Word> words){
+        this.studentWords = words;
     }
 }

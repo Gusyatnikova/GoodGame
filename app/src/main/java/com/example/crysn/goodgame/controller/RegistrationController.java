@@ -12,9 +12,11 @@ public class RegistrationController {
 
     private AuthorizationDataBaseHelper dataBaseHelper;
     public static User user;
+    private WordListController wordListController;
 
     public RegistrationController(Context context) {
         dataBaseHelper = new AuthorizationDataBaseHelper(context);
+        wordListController = new WordListController(context);
     }
 
     public boolean validate(String login, String pswd) {
@@ -33,7 +35,8 @@ public class RegistrationController {
         String[] projection = {
                 AuthorizationEntry.COLUMN_NAME,
                 AuthorizationEntry.COLUMN_LAST_NAME,
-                AuthorizationEntry.REGISTRATOR};
+                AuthorizationEntry.REGISTRATOR_FIRST_NAME,
+                AuthorizationEntry.REGISTRATOR_LAST_NAME,};
         String selection = AuthorizationEntry.LOGIN + "=? AND " + AuthorizationEntry.PASSWORD + "=?";
         String[] selectionArgs = {login, pswd};
         Cursor cursor = db.query(
@@ -48,27 +51,37 @@ public class RegistrationController {
             while (cursor.moveToNext()) {
                 String currentFirstName = cursor.getString(cursor.getColumnIndex(AuthorizationEntry.COLUMN_NAME));
                 String currentLastName = cursor.getString(cursor.getColumnIndex(AuthorizationEntry.COLUMN_LAST_NAME));
-                String currentRegistator = cursor.getString(cursor.getColumnIndex(AuthorizationEntry.REGISTRATOR));
+                String currentRegistatorFirstName = cursor.getString(cursor.getColumnIndex(AuthorizationEntry.REGISTRATOR_FIRST_NAME));
+                String currentRegistatorLastName = cursor.getString(cursor.getColumnIndex(AuthorizationEntry.REGISTRATOR_LAST_NAME));
                 if (currentFirstName.isEmpty() || currentLastName.isEmpty())
                     return false;
                 else {
-                    user = new User(login, pswd, currentFirstName, currentLastName, currentRegistator);
+                    user = new User(login, pswd, currentFirstName, currentLastName, currentRegistatorFirstName, currentRegistatorLastName);
+//                    user.setWords(wordListController.getWordsByTeacher(user.getRegistratorFirstName(), user.getRegistratorLastName()));
+                    Thread thread = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            user.setWords(wordListController.getWordsByTeacher(user.getRegistratorFirstName(), user.getRegistratorLastName()));
+                        }
+                    });
+                    thread.start();
                     return true;
                 }
             }
         } finally {
-            cursor.close();
+            //cursor.close();
         }
         return false;
     }
 
-    private boolean doInsert(String firstname, String lastname, String registrator, String login, String password) {
+    public boolean doInsert(String firstname, String lastname, String registratorFirstName, String registratorLastName, String login, String password) {
         SQLiteDatabase db = dataBaseHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
         values.put(AuthorizationEntry.COLUMN_NAME, firstname);
         values.put(AuthorizationEntry.COLUMN_LAST_NAME, lastname);
-        values.put(AuthorizationEntry.REGISTRATOR, registrator);
+        values.put(AuthorizationEntry.REGISTRATOR_FIRST_NAME, registratorFirstName);
+        values.put(AuthorizationEntry.REGISTRATOR_LAST_NAME, registratorLastName);
         values.put(AuthorizationEntry.LOGIN, login);
         values.put(AuthorizationEntry.PASSWORD, password);
 

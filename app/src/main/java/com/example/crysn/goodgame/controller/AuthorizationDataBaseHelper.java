@@ -8,7 +8,7 @@ import com.example.crysn.goodgame.model.AuthorizationContract.AuthorizationEntry
 
 public class AuthorizationDataBaseHelper extends SQLiteOpenHelper {
         // If you change the database schema, you must increment the database version.
-        public static final int DATABASE_VERSION = 2;
+        public static final int DATABASE_VERSION = 5;
         public static final String DATABASE_NAME = "Authorization.db";
 
         public AuthorizationDataBaseHelper(Context context) {
@@ -19,7 +19,8 @@ public class AuthorizationDataBaseHelper extends SQLiteOpenHelper {
                             AuthorizationEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                             AuthorizationEntry.COLUMN_NAME + " TEXT NOT NULL," +
                             AuthorizationEntry.COLUMN_LAST_NAME + " TEXT NOT NULL," +
-                            AuthorizationEntry.REGISTRATOR + " TEXT," +
+                            AuthorizationEntry.REGISTRATOR_FIRST_NAME + " TEXT," +
+                            AuthorizationEntry.REGISTRATOR_LAST_NAME + " TEXT," +
                             AuthorizationEntry.LOGIN + " TEXT NOT NULL," +
                             AuthorizationEntry.PASSWORD + " TEXT NOT NULL)";
             db.execSQL(SQL_CREATE_ENTRIES);
