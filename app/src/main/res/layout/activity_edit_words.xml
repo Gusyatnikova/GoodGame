@@ -23,7 +23,8 @@
         android:ems="10"
         android:hint="@string/add_russian_word"
         android:inputType="textPersonName"
-        tools:hint="Русский" />
+        tools:hint="Русский"
+        android:layout_toLeftOf="@+id/button7" />
 
     <EditText
         android:id="@+id/editText"
