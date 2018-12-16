@@ -57,7 +57,6 @@ public class RegistrationController {
                     return false;
                 else {
                     user = new User(login, pswd, currentFirstName, currentLastName, currentRegistatorFirstName, currentRegistatorLastName);
-//                    user.setWords(wordListController.getWordsByTeacher(user.getRegistratorFirstName(), user.getRegistratorLastName()));
                     Thread thread = new Thread(new Runnable() {
                         @Override
                         public void run() {
@@ -69,7 +68,7 @@ public class RegistrationController {
                 }
             }
         } finally {
-            //cursor.close();
+            cursor.close();
         }
         return false;
     }

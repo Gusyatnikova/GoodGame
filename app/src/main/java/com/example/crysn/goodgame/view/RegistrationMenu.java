@@ -15,7 +15,7 @@ public class RegistrationMenu extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
     private EditText login;
     private EditText pswd;
-    private RegistrationController controller;
+    static RegistrationController controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

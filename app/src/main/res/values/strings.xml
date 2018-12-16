@@ -28,8 +28,10 @@
     <string name="word_translate">Слово-перевод </string>
     <string name="add_english_word">English </string>
     <string name="add_russian_word">Русский </string>
+    <string name="welcome_register_student">Здесь Вы можете добавить нового ученика! </string>
     <string name="next">Следующий вопрос</string>
     <string name="hint">Перевод</string>
     <string name="task">Сопоставьте английское слово и его перевод</string>
-
+    <string name="firstName">Введите имя</string>
+    <string name="lastName">Введите фамилию</string>
 </resources>

@@ -86,6 +86,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.GamesMenu"/>
         </activity>
+        <activity android:name=".view.RegisterStudent"
+            android:parentActivityName=".view.TeacherMainMenu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.TeacherMainMenu"/>
+        </activity>
     </application>
 
 </manifest>
