@@ -1,6 +1,7 @@
 package com.example.crysn.goodgame.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -93,6 +94,9 @@ public class TranslateWord extends AppCompatActivity {
             translation.setText("");
         }else{
             Toast.makeText(context,"Game passed",Toast.LENGTH_SHORT).show();
+            Intent intent;
+            intent = new Intent(context, LevelsMenu.class);
+            startActivity(intent);
         }
     }
 }

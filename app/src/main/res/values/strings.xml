@@ -29,5 +29,6 @@
     <string name="add_word">Добавить пару </string>
     <string name="next">Следующий вопрос</string>
     <string name="hint">Перевод</string>
+    <string name="task">Сопоставьте английское слово и его перевод</string>
 
 </resources>
