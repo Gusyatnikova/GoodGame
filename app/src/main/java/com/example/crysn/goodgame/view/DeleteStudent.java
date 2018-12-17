@@ -51,6 +51,7 @@ public class DeleteStudent extends AppCompatActivity {
                         String[] arr = item.split(" ");
                         String log = arr[0] + "_" + arr[1];
                         controller.delete(arr[0], arr[1]);
+                        RegistrationController.achievementsController.delete(arr[0],arr[1]);
                         dialog.dismiss();
                         Intent intent = new Intent(view.getContext(), DeleteStudent.class);
                         startActivity(intent);

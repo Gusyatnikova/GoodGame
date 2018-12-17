@@ -8,6 +8,8 @@ import java.util.Random;
 import java.util.Vector;
 
 public class ChooseCWcontroller {
+    private final Integer maxpoints = 6;
+    private Integer currentPoint = 0;
 
     ArrayList<String> used;
     Random random;
@@ -41,6 +43,15 @@ public class ChooseCWcontroller {
         return questions;
     }
     //</editor-fold>
+
+    public void addPoints(){
+        this.currentPoint++;
+    }
+
+    public void saveStatistics(){
+        RegistrationController.achievementsController.addPoints(currentPoint, maxpoints);
+        currentPoint = 0;
+    }
 
     Vector<String> getWrongWords(Vector<String> words){
         /*if(RegistrationController.user.GetWordsArrayLength()<6){

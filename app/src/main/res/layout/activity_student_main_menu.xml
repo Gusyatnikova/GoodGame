@@ -29,10 +29,4 @@
             android:layout_width="match_parent"
             android:layout_height="98dp"
             android:text="@string/my_achievements" />
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="match_parent"
-            android:layout_height="103dp"
-            android:text="@string/exit" />
     </LinearLayout>

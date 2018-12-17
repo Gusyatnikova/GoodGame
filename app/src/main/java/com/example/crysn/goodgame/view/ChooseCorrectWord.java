@@ -32,6 +32,8 @@ public class ChooseCorrectWord extends AppCompatActivity {
     private ArrayList<Question> questions;
     private String answer = "";
 
+    private ChooseCWcontroller controller;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +45,7 @@ public class ChooseCorrectWord extends AppCompatActivity {
     }
     //<editor-fold desc="Configuration">
     private void setupQuestions(){
-        ChooseCWcontroller controller = new ChooseCWcontroller();
+        controller = new ChooseCWcontroller();
         questions = controller.questions();
         /*if(questions.isEmpty()){
             Toast.makeText(this.getApplicationContext(),"Not Enough Words", Toast.LENGTH_SHORT).show();
@@ -75,8 +77,10 @@ public class ChooseCorrectWord extends AppCompatActivity {
         public void onClick(View v) {
             switch(v.getId()){
                 case R.id.button_next:
-                    if(answer.equalsIgnoreCase(currentQuestion.getCorrect_answer()))
+                    if(answer.equalsIgnoreCase(currentQuestion.getCorrect_answer())){
                         Toast.makeText(v.getContext(),"correct answer",Toast.LENGTH_SHORT).show();
+                        controller.addPoints();
+                    }
                     showNextQuestion(v.getContext());
                     break;
             }
@@ -127,9 +131,11 @@ public class ChooseCorrectWord extends AppCompatActivity {
             option4.setText(currentQuestion.getOption4());
         }else{
             Toast.makeText(context,"Game passed",Toast.LENGTH_SHORT).show();
+            controller.saveStatistics();
             Intent intent;
             intent = new Intent(context, LevelsMenu.class);
             startActivity(intent);
+
         }
     }
 }

@@ -52,6 +52,7 @@ public class RegisterStudent extends AppCompatActivity {
                     builder.setTitle("Registration");
                     builder.setMessage("Login: " + log + "\nPassword: " + pswd);
                     controller.doInsert(firstName, lastName, RegistrationController.user.getFirstName(), RegistrationController.user.getLastName(), log, pswd);
+                    RegistrationController.achievementsController.doInsert(0,0,firstName,lastName);
                     alert = builder.create();
                 }
             } else {
