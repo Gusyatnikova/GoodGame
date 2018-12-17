@@ -7,10 +7,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.example.crysn.goodgame.model.AchievementsContract;
 
 public class AchievementsDataBaseHelper extends SQLiteOpenHelper{
-    public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "achievements.db";
+    private static final int DATABASE_VERSION = 1;
+    private static final String DATABASE_NAME = "achievements.db";
 
-    public AchievementsDataBaseHelper(Context context) {
+    AchievementsDataBaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
     @Override

@@ -17,10 +17,12 @@ public class RegistrationController {
     private AuthorizationDataBaseHelper dataBaseHelper;
     public static User user;
     private WordListController wordListController;
+    public static AchievementsController achievementsController;
 
     public RegistrationController(Context context) {
         dataBaseHelper = new AuthorizationDataBaseHelper(context);
         wordListController = new WordListController(context);
+        achievementsController = new AchievementsController(context);
     }
 
     public boolean validate(String login, String pswd) {
@@ -72,6 +74,12 @@ public class RegistrationController {
                         @Override
                         public void run() {
                             user.setWords(wordListController.getWordsByTeacher(user.getRegistratorFirstName(), user.getRegistratorLastName()));
+                        }
+                    });
+                    Thread thr = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            user.setAchievements(achievementsController.getStudentsPoints(user.getFirstName(),user.getLastName()));
                         }
                     });
                     thread.start();

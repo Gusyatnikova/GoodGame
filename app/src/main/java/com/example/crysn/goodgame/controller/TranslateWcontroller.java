@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 public class TranslateWcontroller {
+
+    private final Integer maxpoints = 6;
+    private Integer currentPoint = 0;
+
     public TranslateWcontroller() {
     }
 
@@ -18,5 +22,14 @@ public class TranslateWcontroller {
             questions.add(question);
         }
         return questions;
+    }
+
+    public void addPoints(){
+        this.currentPoint++;
+    }
+
+    public void saveStatistics(){
+        RegistrationController.achievementsController.addPoints(currentPoint, maxpoints);
+        currentPoint = 0;
     }
 }

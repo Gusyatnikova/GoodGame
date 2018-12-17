@@ -11,7 +11,7 @@ import com.example.crysn.goodgame.view.LevelsMenu;
 
 public class StudentMainMenu extends AppCompatActivity {
     Button toLevels;
-    Button exit;
+    Button achievements;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,11 +25,13 @@ public class StudentMainMenu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        exit = findViewById(R.id.button5);
-        exit.setOnClickListener(new View.OnClickListener() {
+        achievements=findViewById(R.id.button4);
+        achievements.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent;
+                intent = new Intent(v.getContext(), StudentAchievements.class);
+                startActivity(intent);
             }
         });
     }

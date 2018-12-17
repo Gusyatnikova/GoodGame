@@ -60,6 +60,11 @@ public class User {
         this.registratorLastName = registratorLastName;
     }
 
+    public void setAchievements(Vector<Integer> points){
+        setPoints(points.get(0));
+        setMax(points.get(1));
+    }
+
     public void setPoints(int points) {
         this.points = points;
     }

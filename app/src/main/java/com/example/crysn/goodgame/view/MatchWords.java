@@ -83,6 +83,7 @@ public class MatchWords extends AppCompatActivity {
                         if (answer1.equals(rus)) {
                             if (answer2.equalsIgnoreCase(eng)) {
                                 Toast.makeText(context, "Correct answer", Toast.LENGTH_SHORT).show();
+                                controller.addPoints();
                                 enadapter.remove(answer2);
                                 ruadapter.remove(answer1);
                             }
@@ -90,6 +91,7 @@ public class MatchWords extends AppCompatActivity {
                         if(answer1.equals(eng)){
                             if(answer2.equalsIgnoreCase(rus)){
                                 Toast.makeText(context, "Correct answer", Toast.LENGTH_SHORT).show();
+                                controller.addPoints();
                                 enadapter.remove(answer1);
                                 ruadapter.remove(answer2);
                             }
@@ -97,6 +99,7 @@ public class MatchWords extends AppCompatActivity {
                     }
                     if(enadapter.isEmpty()){
                         Toast.makeText(context, "Game passed", Toast.LENGTH_SHORT).show();
+                        controller.saveStatistics();
                         Intent intent;
                         intent = new Intent(context, LevelsMenu.class);
                         startActivity(intent);
@@ -130,6 +133,7 @@ public class MatchWords extends AppCompatActivity {
                         if (answer1.equals(rus)) {
                             if (answer2.equals(eng)) {
                                 Toast.makeText(context, "Correct answer", Toast.LENGTH_SHORT).show();
+                                controller.addPoints();
                                 enadapter.remove(answer2);
                                 ruadapter.remove(answer1);
                             }
@@ -137,6 +141,7 @@ public class MatchWords extends AppCompatActivity {
                         if (answer1.equals(eng)) {
                             if (answer2.equals(rus)) {
                                 Toast.makeText(context, "Correct answer", Toast.LENGTH_SHORT).show();
+                                controller.addPoints();
                                 enadapter.remove(answer1);
                                 ruadapter.remove(answer2);
                             }
@@ -144,6 +149,7 @@ public class MatchWords extends AppCompatActivity {
                     }
                     if(enadapter.isEmpty()){
                         Toast.makeText(context, "Game passed", Toast.LENGTH_SHORT).show();
+                        controller.saveStatistics();
                         Intent intent;
                         intent = new Intent(context, LevelsMenu.class);
                         startActivity(intent);

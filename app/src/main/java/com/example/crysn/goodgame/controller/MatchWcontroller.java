@@ -7,6 +7,9 @@ import java.util.Vector;
 
 public class MatchWcontroller {
 
+    private final Integer maxpoints = 6;
+    private Integer currentPoint = 0;
+
     public MatchWcontroller() {}
 
     public ArrayList<Word> words(){
@@ -24,5 +27,14 @@ public class MatchWcontroller {
             }
         }
         return words;
+    }
+
+    public void addPoints(){
+        this.currentPoint++;
+    }
+
+    public void saveStatistics(){
+        RegistrationController.achievementsController.addPoints(currentPoint, maxpoints);
+        currentPoint = 0;
     }
 }

@@ -45,11 +45,11 @@ public class TranslateWord extends AppCompatActivity {
         showNextQuestion(this.getApplicationContext());
     }
 
-    private void setupQuestions(){
+    private void setupQuestions() {
         questions = controller.questions();
     }
 
-    private void configureView(){
+    private void configureView() {
         progressbar = findViewById(R.id.progress_bar);
         progressbar.setMax(questions.size());
         questionProgressNumber = findViewById(R.id.question_number);
@@ -62,39 +62,42 @@ public class TranslateWord extends AppCompatActivity {
     }
 
     //<editor-fold desc="Private outlets listeners">
-    private View.OnClickListener onNextButtonClickListener = new View.OnClickListener(){
+    private View.OnClickListener onNextButtonClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            switch(v.getId()){
+            switch (v.getId()) {
                 case R.id.button_next:
                     answer = translation.getText().toString();
-                    if(answer.equals("")){
-                        Toast.makeText(v.getContext(),"Введите перевод слова",Toast.LENGTH_SHORT).show();
+                    if (answer.equals("")) {
+                        Toast.makeText(v.getContext(), "Введите перевод слова", Toast.LENGTH_SHORT).show();
                     }
-                    if(answer.equalsIgnoreCase(currentQuestion.getCorrect_answer()))
-                        Toast.makeText(v.getContext(),"correct answer",Toast.LENGTH_SHORT).show();
-                        translation.setText("");
+                    if (answer.equalsIgnoreCase(currentQuestion.getCorrect_answer())) {
+                        Toast.makeText(v.getContext(), "correct answer", Toast.LENGTH_SHORT).show();
+                        controller.addPoints();
+                    }
+                    translation.setText("");
                     showNextQuestion(v.getContext());
                     break;
             }
         }
     };
 
-    private void showNextQuestion(Context context){
-        if(++currentQuestionIndex < questions.size()){
+    private void showNextQuestion(Context context) {
+        if (++currentQuestionIndex < questions.size()) {
             currentQuestion = questions.get(currentQuestionIndex);
-            progressbar.setProgress(currentQuestionIndex+1);
+            progressbar.setProgress(currentQuestionIndex + 1);
 
-            String currentProgressNumber = (currentQuestionIndex+1)+"/"+questions.size();
+            String currentProgressNumber = (currentQuestionIndex + 1) + "/" + questions.size();
             questionProgressNumber.setText(currentProgressNumber);
 
-            String currentQuestionTitle = "№" + (currentQuestionIndex+1);
+            String currentQuestionTitle = "№" + (currentQuestionIndex + 1);
             CurrentQuestionTitle.setText(currentQuestionTitle);
 
             questionText.setText(currentQuestion.getQuestion_text());
             translation.setText("");
-        }else{
-            Toast.makeText(context,"Game passed",Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Game passed", Toast.LENGTH_SHORT).show();
+            controller.saveStatistics();
             Intent intent;
             intent = new Intent(context, LevelsMenu.class);
             startActivity(intent);

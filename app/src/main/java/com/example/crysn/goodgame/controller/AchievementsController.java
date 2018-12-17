@@ -12,18 +12,18 @@ import java.util.Vector;
 
 public class AchievementsController {
     private AchievementsDataBaseHelper dataBaseHelper;
-    private User user;
 
     public AchievementsController(Context context){
         dataBaseHelper = new AchievementsDataBaseHelper(context);
-        this.user = RegistrationController.user;
     }
 
     public void addPoints(int points, int maxpoints){
-        Vector<Integer> ps = doSelect(user.getFirstName(), user.getLastName());
+        Vector<Integer> ps = doSelect(RegistrationController.user.getFirstName(), RegistrationController.user.getLastName());
         Integer resPoints = points + ps.get(0);
         Integer resMaxPoints = maxpoints + ps.get(1);
         doUpdate(resPoints, resMaxPoints);
+        RegistrationController.user.setMax(resMaxPoints);
+        RegistrationController.user.setPoints(resPoints);
     }
 
     public void addStudentinAchievements(String studentFirstName, String studentLastName){
@@ -56,6 +56,11 @@ public class AchievementsController {
         }finally {
             cursor.close();
         }
+        if (res.isEmpty()){
+            doInsert(0,0,studentFirstName,studentLastName);
+            res.add(0);
+            res.add(0);
+        }
         return res;
     }
 
@@ -65,8 +70,8 @@ public class AchievementsController {
         SQLiteDatabase db = dataBaseHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(AchievementsContract.AchievementsEntry.COLUMN_TEACHER_FIRST_NAME, user.getFirstName());
-        values.put(AchievementsContract.AchievementsEntry.COLUMN_TEACHER_LAST_NAME, user.getLastName());
+        values.put(AchievementsContract.AchievementsEntry.COLUMN_TEACHER_FIRST_NAME, RegistrationController.user.getFirstName());
+        values.put(AchievementsContract.AchievementsEntry.COLUMN_TEACHER_LAST_NAME, RegistrationController.user.getLastName());
         values.put(AchievementsContract.AchievementsEntry.COLUMN_STUDENT_FIRST_NAME, studentFirstName);
         values.put(AchievementsContract.AchievementsEntry.COLUMN_STUDENT_LAST_NAME, studentLastName);
         values.put(AchievementsContract.AchievementsEntry.COLUMN_STUDENT_POINTS, points);
@@ -82,6 +87,51 @@ public class AchievementsController {
         values.put(AchievementsContract.AchievementsEntry.COLUMN_MAX_POINTS, maxPoints);
         db.update(AchievementsContract.AchievementsEntry.TABLE_NAME,
                 values,
-                AchievementsContract.AchievementsEntry.COLUMN_STUDENT_FIRST_NAME + "= ? AND " + AchievementsContract.AchievementsEntry.COLUMN_STUDENT_LAST_NAME + "= ?", new String[]{user.getFirstName(),user.getLastName()});
+                AchievementsContract.AchievementsEntry.COLUMN_STUDENT_FIRST_NAME + "= ? AND " + AchievementsContract.AchievementsEntry.COLUMN_STUDENT_LAST_NAME + "= ?", new String[]{RegistrationController.user.getFirstName(),RegistrationController.user.getLastName()});
     }
+
+    public Vector<Integer> getStudentsPoints(String studentFirstName, String studentLastName){
+        Vector<Integer> points = new Vector<>();
+        SQLiteDatabase db = dataBaseHelper.getReadableDatabase();
+        String[] projection = {
+                AchievementsContract.AchievementsEntry.COLUMN_STUDENT_POINTS,
+                AchievementsContract.AchievementsEntry.COLUMN_MAX_POINTS
+        };
+        String selection = AchievementsContract.AchievementsEntry.COLUMN_STUDENT_FIRST_NAME + "=? AND " + AchievementsContract.AchievementsEntry.COLUMN_STUDENT_LAST_NAME + "=?";
+        String[] selectionArgs = {studentFirstName, studentLastName};
+        Cursor cursor = db.query(
+                AchievementsContract.AchievementsEntry.TABLE_NAME,
+                projection,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                AchievementsContract.AchievementsEntry.COLUMN_STUDENT_POINTS + " DESC");
+        try{
+            while(cursor.moveToNext()){
+                Integer currentPoints = cursor.getInt(cursor.getColumnIndex(AchievementsContract.AchievementsEntry.COLUMN_STUDENT_POINTS));
+                Integer currentMax = cursor.getInt(cursor.getColumnIndex(AchievementsContract.AchievementsEntry.COLUMN_MAX_POINTS));
+                points.add(currentPoints);
+                points.add(currentMax);
+            }
+        }finally {
+            cursor.close();
+        }
+        if (points.isEmpty()){
+            doInsert(0,0,studentFirstName,studentLastName);
+            points.add(0);
+            points.add(0);
+        }
+        return points;
+    }
+
+    public void delete(String studentFirstName, String studentLastName){
+        SQLiteDatabase db = dataBaseHelper.getReadableDatabase();
+        db.delete(AchievementsContract.AchievementsEntry.TABLE_NAME,"StudentFirstName=? and StudentLastName=?",new String[]{studentFirstName, studentLastName});
+    }
+
+    /*public void delete(String englishWord, String russianWord){
+
+        db.delete(WordsListContract.WordsListEntry.TABLE_NAME, "TeacherFirstName=? and TeacherLastName=? and EnglishWord=? and RussianWord=?",new String[]{user.getFirstName(), user.getLastName(), englishWord, russianWord});
+    }*/
 }

@@ -29,5 +29,7 @@ public class StudentAchievements extends AppCompatActivity {
         int _points = RegistrationController.user.getPoints();
         bar.setMax(max);
         bar.setProgress(_points);
+        String currentProgressNumber = (_points)+"/"+max;
+        points.setText(currentProgressNumber);
     }
 }
