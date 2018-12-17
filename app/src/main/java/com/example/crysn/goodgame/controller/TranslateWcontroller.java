@@ -3,31 +3,20 @@ package com.example.crysn.goodgame.controller;
 import com.example.crysn.goodgame.model.Question;
 
 import java.util.ArrayList;
+import java.util.Vector;
 
 public class TranslateWcontroller {
     public TranslateWcontroller() {
     }
 
-    public ArrayList<Question> questions(){
-        Question question1 = new Question("Как переводится слово \"meet\"?",
-                "Встречать");
-        Question question2 = new Question("Как переводится слово \"speed\"?",
-                "Скорость");
-        Question question3 = new Question("Как переводится слово \"translator\"?",
-                "Переводчик");
-        Question question4 = new Question("Как переводится слово \"honor\"?",
-                "Честь");
-        Question question5 = new Question("Как переводится слово \"think\"?",
-                "Думать");
-        Question question6 = new Question("Как переводится слово \"willow\"?",
-                "Верба");
-        ArrayList<Question> questions= new ArrayList<>();
-        questions.add(question1);
-        questions.add(question2);
-        questions.add(question3);
-        questions.add(question4);
-        questions.add(question5);
-        questions.add(question6);
+    public ArrayList<Question> questions() {
+        ArrayList<Question> questions = new ArrayList<>();
+        for (int i = 0; i < 6; i++) {
+            Vector<String> words = RegistrationController.user.getWords();
+            Question question = new Question("Как переводится слово \""+words.get(0)+"\"?",
+                    words.get(1));
+            questions.add(question);
+        }
         return questions;
     }
 }

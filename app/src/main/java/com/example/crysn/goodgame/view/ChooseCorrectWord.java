@@ -44,6 +44,9 @@ public class ChooseCorrectWord extends AppCompatActivity {
     private void setupQuestions(){
         ChooseCWcontroller controller = new ChooseCWcontroller();
         questions = controller.questions();
+        /*if(questions.isEmpty()){
+            Toast.makeText(this.getApplicationContext(),"Not Enough Words", Toast.LENGTH_SHORT).show();
+        }*/
     }
     private void configureView(){
         progressbar = findViewById(R.id.progress_bar);

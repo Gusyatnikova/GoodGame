@@ -17,6 +17,8 @@ import com.example.crysn.goodgame.controller.MatchWcontroller;
 import com.example.crysn.goodgame.model.Word;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -37,8 +39,8 @@ public class MatchWords extends AppCompatActivity {
     }
 
     private void setupWords(final Context context) {
-        english = (ListView) findViewById(R.id.english);
-        russian = (ListView) findViewById(R.id.russian);
+        english = findViewById(R.id.english);
+        russian = findViewById(R.id.russian);
         answer1 = "";
         answer2 = "";
         MatchWcontroller controller = new MatchWcontroller();
@@ -49,6 +51,8 @@ public class MatchWords extends AppCompatActivity {
             englishlist.add(words.get(i).getEnglishWord());
         }
         final ArrayList<String> russianlist = new ArrayList<String>();
+        Collections.sort(russianlist);
+        Collections.reverse(russianlist);
         for (int i = 0; i < words.size(); i++) {
             russianlist.add(words.get(i).getRussianWord());
         }

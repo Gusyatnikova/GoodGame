@@ -1,6 +1,10 @@
 package com.example.crysn.goodgame.model;
 
+import com.example.crysn.goodgame.controller.RegistrationController;
+
 import java.util.ArrayList;
+import java.util.Random;
+import java.util.Vector;
 
 public class User {
     private String login;
@@ -10,6 +14,7 @@ public class User {
     private String registratorFirstName;
     private String registratorLastName;
     private ArrayList<Word> studentWords;
+    private Random random;
 
     public User() {
         this.login = null;
@@ -30,6 +35,9 @@ public class User {
         this.studentWords = new ArrayList<Word>();
     }
 
+    public void setWords(ArrayList<Word> words){
+        this.studentWords = words;
+    }
     public void setLogin(String login) {
         this.login = login;
     }
@@ -69,7 +77,23 @@ public class User {
         return registratorLastName;
     }
 
-    public void setWords(ArrayList<Word> words){
-        this.studentWords = words;
+    public Word getPair(int i){
+        return studentWords.get(i);
+    }
+
+    public Vector<String > getWords(){
+        /*if(RegistrationController.user.GetWordsArrayLength()<6){
+            return null;
+        }*/
+        int i = random.nextInt(RegistrationController.user.GetWordsArrayLength());
+        Word words = RegistrationController.user.getPair(i);
+        Vector<String> pair = new Vector<>();
+        pair.add(words.getEnglishWord());
+        pair.add(words.getRussianWord());
+        return pair;
+    }
+
+    public int GetWordsArrayLength(){
+        return studentWords.size();
     }
 }

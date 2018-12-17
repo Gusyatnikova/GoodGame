@@ -32,11 +32,13 @@ public class TranslateWord extends AppCompatActivity {
     private ArrayList<Question> questions;
     private String answer = "";
 
+    TranslateWcontroller controller;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_translate_word);
-
+        controller = new TranslateWcontroller();
         setupQuestions();
         configureView();
 
@@ -44,7 +46,6 @@ public class TranslateWord extends AppCompatActivity {
     }
 
     private void setupQuestions(){
-        TranslateWcontroller controller = new TranslateWcontroller();
         questions = controller.questions();
     }
 
