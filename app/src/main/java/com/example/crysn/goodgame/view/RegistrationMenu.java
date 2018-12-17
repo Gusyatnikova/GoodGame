@@ -15,7 +15,7 @@ public class RegistrationMenu extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
     private EditText login;
     private EditText pswd;
-    private RegistrationController controller;
+    static RegistrationController controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +24,7 @@ public class RegistrationMenu extends AppCompatActivity {
         login = findViewById(R.id.login);
         pswd = findViewById(R.id.pswd);
         controller = new RegistrationController(this.getApplicationContext());
-
-        controller.doInsert("admin", "admin", "admin", "admin", "admin", "admin");
+        //controller.doInsert("admin", "admin", "admin", "admin", "admin", "admin");
     }
 
     public void enter(View view) {

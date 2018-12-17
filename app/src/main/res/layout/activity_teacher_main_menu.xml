@@ -20,20 +20,22 @@
         android:layout_marginTop="5dp"
         android:text="@string/Students_achievements"
         />
+
     <Button
         android:id="@+id/registrate"
-        android:layout_height="100dp"
         android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:layout_marginTop="5dp"
-        android:text="@string/Registrate"
-        />
+        android:onClick="registerStudent"
+        android:text="@string/Registrate" />
+
     <Button
         android:id="@+id/delete"
-        android:layout_height="100dp"
         android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:layout_marginTop="5dp"
-        android:text="@string/Delete"
-        />
+        android:onClick="deleteStudent"
+        android:text="@string/Delete" />
 
     <Button
         android:id="@+id/wordlist"

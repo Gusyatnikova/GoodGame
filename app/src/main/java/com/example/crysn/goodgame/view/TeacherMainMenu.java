@@ -18,5 +18,12 @@ public class TeacherMainMenu extends AppCompatActivity {
         Intent intent = new Intent(this, EditWordsMenu.class);
         startActivity(intent);
     }
-    //
+    public void registerStudent(View view) {
+        Intent intent = new Intent(this, RegisterStudent.class);
+        startActivity(intent);
+    }
+    public void deleteStudent(View view) {
+        Intent intent = new Intent(this, DeleteStudent.class);
+        startActivity(intent);
+    }
 }

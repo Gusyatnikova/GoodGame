@@ -77,15 +77,6 @@ public class EditWordsMenu extends AppCompatActivity {
 
                 AlertDialog alert = builder.create();
                 alert.show();
-//                final String item = (String)parent.getItemAtPosition(position);
-//                view.animate().setDuration(2000).alpha(0).withEndAction(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        list.remove(item);
-//                        adapter.notifyDataSetChanged();
-//                        view.setAlpha(1);
-//                    }
-//                });
             }
         });
     }
@@ -127,4 +118,3 @@ public class EditWordsMenu extends AppCompatActivity {
         }
     }
 }
-
