@@ -30,4 +30,8 @@ public class LevelsMenu extends AppCompatActivity {
         Intent intent = new Intent(view.getContext(), GamesMenu.class);
         startActivity(intent);
     }
+    public void showRules(View view) {
+        Intent intent = new Intent(view.getContext(), Rules.class);
+        startActivity(intent);
+    }
 }

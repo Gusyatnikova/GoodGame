@@ -113,6 +113,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.TeacherMainMenu"/>
         </activity>
+        <activity android:name=".view.Rules"
+            android:parentActivityName=".view.LevelsMenu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.LevelsMenu"/>
+        </activity>
     </application>
 
 </manifest>

@@ -35,4 +35,11 @@
         android:layout_marginTop="5dp"
         android:onClick="pressLevel3"
         android:text="@string/level_3" />
+
+    <Button
+        android:id="@+id/rules"
+        android:layout_width="match_parent"
+        android:layout_height="97dp"
+        android:onClick="showRules"
+        android:text="@string/rules" />
 </LinearLayout>

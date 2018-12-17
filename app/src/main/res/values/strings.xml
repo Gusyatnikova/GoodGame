@@ -35,4 +35,6 @@
     <string name="firstName">Введите имя</string>
     <string name="lastName">Введите фамилию</string>
     <string name="achievem">Достижения ученика:</string>
+    <string name="rules">Посмотреть правила </string>
+    <string name="wellcome_rules">Ознакомьтесь с правилами игр! </string>
 </resources>

@@ -24,7 +24,7 @@ public class RegistrationMenu extends AppCompatActivity {
         login = findViewById(R.id.login);
         pswd = findViewById(R.id.pswd);
         controller = new RegistrationController(this.getApplicationContext());
-        controller.doInsert("admin", "admin", "admin", "admin", "admin", "admin");
+        //controller.doInsert("admin", "admin", "admin", "admin", "admin", "admin");
     }
 
     public void enter(View view) {
