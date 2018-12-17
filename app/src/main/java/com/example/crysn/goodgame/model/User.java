@@ -36,7 +36,8 @@ public class User {
     }
 
     public void setWords(ArrayList<Word> words){
-        this.studentWords = words;
+        for(int i = 0; i < words.size(); i++)
+        this.studentWords.add(new Word(words.get(i).getEnglishWord(), words.get(i).getRussianWord()));
     }
     public void setLogin(String login) {
         this.login = login;
