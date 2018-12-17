@@ -32,15 +32,16 @@ public class StudentsAchievements extends AppCompatActivity {
         setContentView(R.layout.activity_students_achievements);
         controller = RegistrationMenu.controller;
         ArrayList<String> currentStudents = new ArrayList<>();
+        ArrayList<String> finish_result = new ArrayList<>();
         currentStudents = controller.doSelect(RegistrationController.user.getFirstName(), RegistrationController.user.getLastName(), true);
         for(int i = 0 ; i < currentStudents.size(); i++) {
            Vector<Integer> cur_ach = RegistrationController.achievementsController.getStudentsPoints(currentStudents.get(i).split(" ")[0], currentStudents.get(i).split(" ")[1]);
-           currentStudents.add(i, currentStudents.get(i).split(" ")[0] + " " + currentStudents.get(i).split(" ")[1] + " cur: "
+           finish_result.add(i, currentStudents.get(i).split(" ")[0] + " | " + currentStudents.get(i).split(" ")[1] + " cur: "
                    + String.valueOf(cur_ach.get(0)) + " max: " + String.valueOf(cur_ach.get(1)));
         }
         final ListView listView = (ListView) findViewById(R.id.studenslistview);
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, currentStudents);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, finish_result);
         listView.setAdapter(adapter);
     }
 }
