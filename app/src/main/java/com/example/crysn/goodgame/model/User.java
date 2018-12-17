@@ -14,6 +14,8 @@ public class User {
     private String registratorFirstName;
     private String registratorLastName;
     private ArrayList<Word> studentWords;
+    private int points;
+    private int max;
     private Random random = new Random();
 
     public User() {
@@ -24,6 +26,8 @@ public class User {
         this.registratorFirstName = null;
         this.registratorLastName = null;
         this.studentWords = null;
+        this.max = 0;
+        this.points = 0;
     }
     public User(String login, String pswd, String firstName, String lastName, String registratorFirstName, String registratorLastName) {
         this.login = login;
@@ -55,6 +59,23 @@ public class User {
         this.registratorFirstName = registratorFirstName;
         this.registratorLastName = registratorLastName;
     }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
+
+    public void setMax(int max) {
+        this.max = max;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public int getMax() {
+        return max;
+    }
+
     public String getLogin() {
         return this.login;
     }

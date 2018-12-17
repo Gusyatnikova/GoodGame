@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/achievements"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/achievem"
+        android:textSize="20sp"
+        android:textStyle="normal|bold"
+        />
+    <TextView
+        android:id="@+id/question_number"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="-/-"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="normal|bold"
+        />
+    <ProgressBar
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:id="@+id/student_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
