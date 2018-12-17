@@ -14,7 +14,7 @@ public class User {
     private String registratorFirstName;
     private String registratorLastName;
     private ArrayList<Word> studentWords;
-    private Random random;
+    private Random random = new Random();
 
     public User() {
         this.login = null;

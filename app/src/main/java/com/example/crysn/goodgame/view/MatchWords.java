@@ -1,6 +1,7 @@
 package com.example.crysn.goodgame.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
@@ -47,15 +48,19 @@ public class MatchWords extends AppCompatActivity {
         words = controller.words();
 
         final ArrayList<String> englishlist = new ArrayList<String>();
+
         for (int i = 0; i < words.size(); i++) {
             englishlist.add(words.get(i).getEnglishWord());
         }
+        Collections.sort(englishlist);
+        Collections.reverse(englishlist);
         final ArrayList<String> russianlist = new ArrayList<String>();
-        Collections.sort(russianlist);
-        Collections.reverse(russianlist);
+
         for (int i = 0; i < words.size(); i++) {
             russianlist.add(words.get(i).getRussianWord());
         }
+        Collections.sort(russianlist);
+        Collections.reverse(russianlist);
         final StableArrayAdapter ruadapter = new StableArrayAdapter(this, android.R.layout.simple_list_item_1, russianlist);
         final StableArrayAdapter enadapter = new StableArrayAdapter(context, android.R.layout.simple_list_item_1, englishlist);
         english.setAdapter(enadapter);
@@ -92,6 +97,9 @@ public class MatchWords extends AppCompatActivity {
                     }
                     if(enadapter.isEmpty()){
                         Toast.makeText(context, "Game passed", Toast.LENGTH_SHORT).show();
+                        Intent intent;
+                        intent = new Intent(context, LevelsMenu.class);
+                        startActivity(intent);
                     }
                     answer1 = "";
                     answer2 = "";
@@ -136,6 +144,9 @@ public class MatchWords extends AppCompatActivity {
                     }
                     if(enadapter.isEmpty()){
                         Toast.makeText(context, "Game passed", Toast.LENGTH_SHORT).show();
+                        Intent intent;
+                        intent = new Intent(context, LevelsMenu.class);
+                        startActivity(intent);
                     }
                     answer1 = "";
                     answer2 = "";
