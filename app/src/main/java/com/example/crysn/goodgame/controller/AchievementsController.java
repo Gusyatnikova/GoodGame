@@ -129,9 +129,4 @@ public class AchievementsController {
         SQLiteDatabase db = dataBaseHelper.getReadableDatabase();
         db.delete(AchievementsContract.AchievementsEntry.TABLE_NAME,"StudentFirstName=? and StudentLastName=?",new String[]{studentFirstName, studentLastName});
     }
-
-    /*public void delete(String englishWord, String russianWord){
-
-        db.delete(WordsListContract.WordsListEntry.TABLE_NAME, "TeacherFirstName=? and TeacherLastName=? and EnglishWord=? and RussianWord=?",new String[]{user.getFirstName(), user.getLastName(), englishWord, russianWord});
-    }*/
 }
